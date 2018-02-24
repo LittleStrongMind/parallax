@@ -88,34 +88,12 @@
         /**
          * Pick randomly an item inside an array.
          *
-         * @param  {*[]} array   The array where to pick the value.
-         * @return {*}           The picked item.
+         * @param  {Object|string|number[]} array   The array where to pick the value.
+         * @return {Object|string|number}           The picked item.
          */
         pick (array) {
             return array[_.random(0, array.length - 1)];
         },
-
-
-        /**
-         * Apply a list of styles to an element.
-         *
-         * Note that the CSS properties that normaly write themselves with an hypen,
-         * like 'transform-origin' must be written in camel case here.
-         *
-         * @example
-         *
-         * const element = _.get('.foo');
-         *
-         * _.style(element, {
-         *     display:         'inline-block',
-         *     transformOrigin: 'left',
-         * });
-         *
-         *
-         * @param  {Element} element      The element that will get the styles.
-         * @param  {Object}  stylesheet   Literal describing the styles.
-         * @return {Element}              The styled element.
-         */
 
         /**
          * Apply a list of styles to an element.
@@ -138,16 +116,6 @@
 
 
     class Parallax {
-
-        /**
-         * Create a Parallax instance.
-         *
-         * @method constructor
-         * @param  {string}    containerSelector   CSS selector for the parallax container.
-         * @param  {[type]}    colors              [description]
-         * @param  {number}    layers         [description]
-         * @param  {boolean}   mergeLayers         [description]
-         */
 
         /**
          * Create a Parallax instance.
