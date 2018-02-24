@@ -1,0 +1,42 @@
+{
+  "name": "parallax",
+  "version": "0.3.0",
+  "description": "a universe of pixels at keyboard range",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel src/parallax.js --out-file bin/parallax.min.js",
+    "beautify": "csscomb src/css",
+    "minify": "minify src/css/parallax.css --output bin/parallax.min.css",
+    "compile": "babel src/parallax.js | google-closure-compiler-js > ./bin/parallax.min.js --warningLevel=QUIET --createSourceMap=true",
+    "lint": "eslint src",
+    "docs": "jsdoc src/parallax.js -d docs -t node_modules/minami",
+    "prerelease": "rm -rf bin/* && mkdir -p bin",
+    "release": "npm run minify && npm run compile"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LittleStrongMind/parallax.git"
+  },
+  "author": "LittleStrongMind",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LittleStrongMind/parallax/issues"
+  },
+  "homepage": "https://github.com/LittleStrongMind/parallax#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "csscomb": "^4.2.0",
+    "eslint": "^4.10.0",
+    "google-closure-compiler-js": "^20170910.0.1",
+    "minami": "^1.2.3",
+    "minifier": "^0.8.1",
+    "sass": "^1.0.0-beta.2"
+  }
+}
